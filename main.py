@@ -31,5 +31,5 @@ def summarize(input: TextInput):
         summary = data[0]["summary_text"]
         return {"summary": summary}
     except Exception as e:
-        return {"error": "Failed to summarize"}
+        return {"error": "Failed to summarize", "details": data}
 
