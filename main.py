@@ -28,9 +28,8 @@ def summarize(input: TextInput):
     response = requests.post(API_URL, headers=HEADERS, json={"inputs": input.text})
     try:
         data = response.json()
-        print(data)  # Debug output
         summary = data[0]["summary_text"]
         return {"summary": summary}
     except Exception as e:
-        return {"error": "Failed to summarize", "details": data}
+        return {"error": "Failed to summarize"}
 
